@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E90A0D720EEDFD700E12B28 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0D620EEDFD700E12B28 /* Style.swift */; };
+		2E90A0DA20EEE6D300E12B28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0D920EEE6D300E12B28 /* LoginViewController.swift */; };
+		2E90A0DD20EEE97100E12B28 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0DC20EEE97100E12B28 /* HomeViewController.swift */; };
+		2E90A0E020EEEB2D00E12B28 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0DF20EEEB2D00E12B28 /* NavigationView.swift */; };
+		2E90A0E220EEEB7800E12B28 /* BasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0E120EEEB7800E12B28 /* BasicView.swift */; };
+		2E90A0E420F1676700E12B28 /* PincodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0E320F1676700E12B28 /* PincodeViewController.swift */; };
 		2ED6F00920C7724A000F7FA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6F00820C7724A000F7FA6 /* AppDelegate.swift */; };
 		2ED6F00B20C7724A000F7FA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6F00A20C7724A000F7FA6 /* ViewController.swift */; };
 		2ED6F00E20C7724A000F7FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F00C20C7724A000F7FA6 /* Main.storyboard */; };
 		2ED6F01120C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6F00F20C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld */; };
 		2ED6F01320C7724E000F7FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F01220C7724E000F7FA6 /* Assets.xcassets */; };
 		2ED6F01620C7724E000F7FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F01420C7724E000F7FA6 /* LaunchScreen.storyboard */; };
+		2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */; };
+		2EE7104220F1831800FE1946 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7104120F1831800FE1946 /* extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E90A0D620EEDFD700E12B28 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		2E90A0D920EEE6D300E12B28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2E90A0DC20EEE97100E12B28 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2E90A0DF20EEEB2D00E12B28 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		2E90A0E120EEEB7800E12B28 /* BasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicView.swift; sourceTree = "<group>"; };
+		2E90A0E320F1676700E12B28 /* PincodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PincodeViewController.swift; sourceTree = "<group>"; };
 		2ED6F00520C7724A000F7FA6 /* WiFi_Locker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFi_Locker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6F00820C7724A000F7FA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ED6F00A20C7724A000F7FA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +38,8 @@
 		2ED6F01220C7724E000F7FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ED6F01520C7724E000F7FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2ED6F01720C7724E000F7FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		2EE7104120F1831800FE1946 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,9 +53,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E90A0D820EEE6AD00E12B28 /* LoginandRegister */ = {
+			isa = PBXGroup;
+			children = (
+				2E90A0D920EEE6D300E12B28 /* LoginViewController.swift */,
+				2E90A0E320F1676700E12B28 /* PincodeViewController.swift */,
+			);
+			path = LoginandRegister;
+			sourceTree = "<group>";
+		};
+		2E90A0DB20EEE91500E12B28 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				2E90A0DC20EEE97100E12B28 /* HomeViewController.swift */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		2E90A0DE20EEEA9C00E12B28 /* CustomizedConponent */ = {
+			isa = PBXGroup;
+			children = (
+				2E90A0DF20EEEB2D00E12B28 /* NavigationView.swift */,
+				2E90A0E120EEEB7800E12B28 /* BasicView.swift */,
+			);
+			path = CustomizedConponent;
+			sourceTree = "<group>";
+		};
 		2ED6EFFC20C7724A000F7FA6 = {
 			isa = PBXGroup;
 			children = (
+				2EE7104120F1831800FE1946 /* extension.swift */,
+				2E90A0D620EEDFD700E12B28 /* Style.swift */,
+				2E90A0DE20EEEA9C00E12B28 /* CustomizedConponent */,
+				2E90A0D820EEE6AD00E12B28 /* LoginandRegister */,
+				2E90A0DB20EEE91500E12B28 /* Homepage */,
+				2EE7103E20F17DE700FE1946 /* Setting */,
 				2ED6F00720C7724A000F7FA6 /* WiFi_Locker */,
 				2ED6F00620C7724A000F7FA6 /* Products */,
 			);
@@ -65,6 +113,14 @@
 				2ED6F00F20C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld */,
 			);
 			path = WiFi_Locker;
+			sourceTree = "<group>";
+		};
+		2EE7103E20F17DE700FE1946 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +194,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E90A0E020EEEB2D00E12B28 /* NavigationView.swift in Sources */,
 				2ED6F00B20C7724A000F7FA6 /* ViewController.swift in Sources */,
+				2E90A0E420F1676700E12B28 /* PincodeViewController.swift in Sources */,
+				2E90A0D720EEDFD700E12B28 /* Style.swift in Sources */,
 				2ED6F01120C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld in Sources */,
+				2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */,
+				2E90A0DA20EEE6D300E12B28 /* LoginViewController.swift in Sources */,
+				2EE7104220F1831800FE1946 /* extension.swift in Sources */,
 				2ED6F00920C7724A000F7FA6 /* AppDelegate.swift in Sources */,
+				2E90A0DD20EEE97100E12B28 /* HomeViewController.swift in Sources */,
+				2E90A0E220EEEB7800E12B28 /* BasicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

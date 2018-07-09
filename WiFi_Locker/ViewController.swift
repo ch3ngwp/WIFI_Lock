@@ -8,11 +8,16 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
 
+//    let appName = Bundle.main.displayName
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = MYColor.background_color
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
