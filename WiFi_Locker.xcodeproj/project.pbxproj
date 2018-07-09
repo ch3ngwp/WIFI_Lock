@@ -19,6 +19,7 @@
 		2ED6F01120C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6F00F20C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld */; };
 		2ED6F01320C7724E000F7FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F01220C7724E000F7FA6 /* Assets.xcassets */; };
 		2ED6F01620C7724E000F7FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F01420C7724E000F7FA6 /* LaunchScreen.storyboard */; };
+		2ED81B4F20F41A6800FBB9BD /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED81B4E20F41A6800FBB9BD /* TermViewController.swift */; };
 		2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */; };
 		2EE7104220F1831800FE1946 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7104120F1831800FE1946 /* extension.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		2ED6F01220C7724E000F7FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ED6F01520C7724E000F7FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2ED6F01720C7724E000F7FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED81B4E20F41A6800FBB9BD /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
 		2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2EE7104120F1831800FE1946 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			children = (
 				2E90A0D920EEE6D300E12B28 /* LoginViewController.swift */,
 				2E90A0E320F1676700E12B28 /* PincodeViewController.swift */,
+				2ED81B4E20F41A6800FBB9BD /* TermViewController.swift */,
 			);
 			path = LoginandRegister;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				2E90A0D720EEDFD700E12B28 /* Style.swift in Sources */,
 				2ED6F01120C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld in Sources */,
 				2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */,
+				2ED81B4F20F41A6800FBB9BD /* TermViewController.swift in Sources */,
 				2E90A0DA20EEE6D300E12B28 /* LoginViewController.swift in Sources */,
 				2EE7104220F1831800FE1946 /* extension.swift in Sources */,
 				2ED6F00920C7724A000F7FA6 /* AppDelegate.swift in Sources */,
