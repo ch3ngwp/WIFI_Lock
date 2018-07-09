@@ -20,6 +20,7 @@
 		2ED6F01320C7724E000F7FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F01220C7724E000F7FA6 /* Assets.xcassets */; };
 		2ED6F01620C7724E000F7FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F01420C7724E000F7FA6 /* LaunchScreen.storyboard */; };
 		2ED81B4F20F41A6800FBB9BD /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED81B4E20F41A6800FBB9BD /* TermViewController.swift */; };
+		2ED81B5220F42BD300FBB9BD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED81B5120F42BD300FBB9BD /* CalendarViewController.swift */; };
 		2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */; };
 		2EE7104220F1831800FE1946 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7104120F1831800FE1946 /* extension.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		2ED6F01520C7724E000F7FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2ED6F01720C7724E000F7FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ED81B4E20F41A6800FBB9BD /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
+		2ED81B5120F42BD300FBB9BD /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2EE7104120F1831800FE1946 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 				2E90A0DE20EEEA9C00E12B28 /* CustomizedConponent */,
 				2E90A0D820EEE6AD00E12B28 /* LoginandRegister */,
 				2E90A0DB20EEE91500E12B28 /* Homepage */,
+				2ED81B5020F42BAF00FBB9BD /* Calendar */,
 				2EE7103E20F17DE700FE1946 /* Setting */,
 				2ED6F00720C7724A000F7FA6 /* WiFi_Locker */,
 				2ED6F00620C7724A000F7FA6 /* Products */,
@@ -116,6 +119,14 @@
 				2ED6F00F20C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld */,
 			);
 			path = WiFi_Locker;
+			sourceTree = "<group>";
+		};
+		2ED81B5020F42BAF00FBB9BD /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				2ED81B5120F42BD300FBB9BD /* CalendarViewController.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		2EE7103E20F17DE700FE1946 /* Setting */ = {
@@ -205,6 +216,7 @@
 				2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */,
 				2ED81B4F20F41A6800FBB9BD /* TermViewController.swift in Sources */,
 				2E90A0DA20EEE6D300E12B28 /* LoginViewController.swift in Sources */,
+				2ED81B5220F42BD300FBB9BD /* CalendarViewController.swift in Sources */,
 				2EE7104220F1831800FE1946 /* extension.swift in Sources */,
 				2ED6F00920C7724A000F7FA6 /* AppDelegate.swift in Sources */,
 				2E90A0DD20EEE97100E12B28 /* HomeViewController.swift in Sources */,
