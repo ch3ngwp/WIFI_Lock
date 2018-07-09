@@ -123,10 +123,10 @@ class LoginViewController: UIViewController {
         return button
     }()
     
-//    @objc func handleSignup(){
-//        let vc = PincodeViewController()
-//        self.present(vc, animated: false, completion: nil)
-//    }
+    @objc func handleSignup(){
+        let vc = PincodeViewController()
+        self.present(vc, animated: false, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
