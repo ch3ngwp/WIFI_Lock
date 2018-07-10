@@ -10,3 +10,8 @@ struct MYColor {
     static var background_color = UIColor(red: 31/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
     
 }
+
+
+class MyColor:NSObject{
+    var background_color = UIColor(red: 31/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
+}

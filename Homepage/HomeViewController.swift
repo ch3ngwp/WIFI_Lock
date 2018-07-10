@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 protocol handleHomepageDelegate:NSObjectProtocol {
-    
+    func JumptoCalendar()
 }
 
 class AppCellView:UITableViewCell{
@@ -48,25 +48,44 @@ class AppCellView:UITableViewCell{
     }()
     
     @objc func handletoCalendar(){
-        
+        if let delegate = self.delegate as handleHomepageDelegate?{
+            delegate.JumptoCalendar()
+        }
     }
     
-    var check_wifi:UIImageView={
-        let img = UIImageView()
-        img.image = UIImage(named: "icons8-ok-96")
-        img.contentMode = .scaleToFill
-        img.clipsToBounds = true
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
+    lazy var check_wifi:UIButton={
+        let btn = UIButton()
+        btn.setBackgroundImage(UIImage(named: "icons8-ok-96"), for: .normal)
+        btn.imageView?.contentMode = .scaleToFill
+        btn.clipsToBounds = true
+        btn.addTarget(self, action: #selector(handleSelected), for: .touchUpInside)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tag = 1
+        return btn
     }()
     
-    var check_cel:UIImageView={
-        let img = UIImageView()
-        img.image = UIImage(named: "icons8-ok-96")
-        img.contentMode = .scaleToFill
-        img.clipsToBounds = true
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
+    @objc func handleSelected(_ sender:UIButton){
+        let index = sender.tag
+        switch index{
+        case 0:
+            sender.tag = 1
+            sender.setBackgroundImage(UIImage(named: "icons8-ok-96"), for: .normal)
+        case 1:
+            sender.tag = 0
+            sender.setBackgroundImage(UIImage(named: "icons8-unok-96"), for: .normal)
+        default:
+            print("default")
+        }
+    }
+    
+    lazy var check_cel:UIButton={
+        let btn = UIButton()
+        btn.setBackgroundImage(UIImage(named: "icons8-ok-96"), for: .normal)
+        btn.imageView?.contentMode = .scaleToFill
+        btn.clipsToBounds = true
+        btn.addTarget(self, action: #selector(handleSelected), for: .touchUpInside)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -168,6 +187,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.time_label.text = "Time: 6:00 - 9:00"
         cell.backgroundColor = UIColor.clear
         cell.selectionStyle = .none
+        cell.delegate = self
         return cell
     }
     
@@ -204,7 +224,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     func JumptoCalendar(){
-        
+        let vc = CalendarViewController()
+        self.present(vc, animated: false, completion: nil)
     }
 
     /*
