@@ -72,6 +72,7 @@ class TermViewController: UIViewController {
     }()
     
     @objc func handleAccept(){
+        UserDefaults.standard.set(true, forKey: "isAccept")
         let vc = LoginViewController()
         self.present(vc, animated: false, completion: nil)
     }

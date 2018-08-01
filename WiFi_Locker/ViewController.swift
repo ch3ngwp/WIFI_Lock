@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 //    let appName = Bundle.main.displayName
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = MYColor.background_color
+//        view.backgroundColor = MYColor.background_color
         
         
     }

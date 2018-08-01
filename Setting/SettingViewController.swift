@@ -56,18 +56,18 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.dismiss(animated: false, completion: nil)
     }
     
-    lazy var right_navi_item:UIButton={
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 40))
-        btn.setTitle("Save", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.contentHorizontalAlignment = .right
-        btn.addTarget(self, action: #selector(handleSave), for: .touchUpInside)
-        return btn
-    }()
-    
-    @objc func handleSave(){
-        
-    }
+//    lazy var right_navi_item:UIButton={
+//        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 40))
+//        btn.setTitle("Save", for: .normal)
+//        btn.setTitleColor(UIColor.white, for: .normal)
+//        btn.contentHorizontalAlignment = .right
+//        btn.addTarget(self, action: #selector(handleSave), for: .touchUpInside)
+//        return btn
+//    }()
+//
+//    @objc func handleSave(){
+//
+//    }
     
     lazy var tableview:UITableView={
         let tbl = UITableView(frame: .zero, style: .grouped)
@@ -75,8 +75,6 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tbl.dataSource = self
         tbl.showsVerticalScrollIndicator = false
         tbl.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-//        tbl.separatorStyle = .none
-//        tbl.tableFooterView = UIView()
         tbl.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         tbl.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tbl.translatesAutoresizingMaskIntoConstraints = false
@@ -111,7 +109,6 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.backgroundColor = UIColor.clear
         cell.selectionStyle = .none
         if indexPath.section == 0{
             cell.addSubview(stylecells[indexPath.row])
@@ -160,7 +157,7 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         view.addSubview(navigation)
         
         navigation.left_view.addSubview(left_navi_item)
-        navigation.right_view.addSubview(right_navi_item)
+//        navigation.right_view.addSubview(right_navi_item)
         
     }
 

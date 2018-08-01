@@ -11,12 +11,30 @@ import Foundation
 
 protocol handleHomepageDelegate:NSObjectProtocol {
     func JumptoCalendar()
+    func TypedInTime(index:Int,time:(String,String))
 }
 
 class AppCellView:UITableViewCell{
     
     weak var delegate:handleHomepageDelegate?
     
+    var cell_data:(UIImage,String,Int,Int,[(String,String)])?{
+        didSet{
+            self.app_icon.image = cell_data?.0
+            self.app_name.text = cell_data?.1
+            if cell_data?.2 == 0{
+                self.check_wifi.setBackgroundImage(UIImage(named: "icons8-unok-96"), for: .normal)
+            }
+            if cell_data?.3 == 0{
+                self.check_cel.setBackgroundImage(UIImage(named: "icons8-unok-96"), for: .normal)
+            }
+            var timeStr = "Time: "
+            for time in (cell_data?.4)!{
+                timeStr += "\(time.0) - \(time.1)"
+            }
+            self.time_button.setTitle("\(timeStr)", for: .normal)
+        }
+    }
     var app_icon:UIImageView={
         let img = UIImageView()
         return img
@@ -30,13 +48,24 @@ class AppCellView:UITableViewCell{
         return label
     }()
     
-    var time_label:UILabel={
-        let label = UILabel()
-        label.textColor = UIColor.black.withAlphaComponent(0.5)
-        label.font = label.font.withSize(16)
+    lazy var time_button:UIButton={
+        let label = UIButton()
+        label.setTitleColor(UIColor.black.withAlphaComponent(0.5), for: .normal)
+        label.titleLabel?.font = label.titleLabel?.font.withSize(16)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.addTarget(self, action: #selector(handleSelectTime), for: .touchUpInside)
         return label
     }()
+    
+    @objc func handleSelectTime(){
+        if let window = UIApplication.shared.keyWindow{
+            let view = SelectTimeView()
+            view.frame = window.frame
+            view.tag = self.tag
+            view.delegate = self.delegate
+            window.addSubview(view)
+        }
+    }
     
     lazy var calendar_button:UIButton={
         let btn = UIButton()
@@ -93,7 +122,7 @@ class AppCellView:UITableViewCell{
         
         addSubview(app_icon)
         addSubview(app_name)
-        addSubview(time_label)
+        addSubview(time_button)
         addSubview(calendar_button)
         addSubview(check_wifi)
         addSubview(check_cel)
@@ -107,13 +136,13 @@ class AppCellView:UITableViewCell{
         app_name.heightAnchor.constraint(equalToConstant: 24).isActive = true
         app_name.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, multiplier: 1/2).isActive = true
         
-        time_label.topAnchor.constraint(equalTo: app_name.bottomAnchor).isActive = true
-        time_label.leftAnchor.constraint(equalTo: app_icon.rightAnchor, constant: 8).isActive = true
-        time_label.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        time_label.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, multiplier: 1/2).isActive = true
+        time_button.topAnchor.constraint(equalTo: app_name.bottomAnchor).isActive = true
+        time_button.leftAnchor.constraint(equalTo: app_icon.rightAnchor, constant: 8).isActive = true
+        time_button.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        time_button.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, multiplier: 1/2).isActive = true
         
-        calendar_button.leftAnchor.constraint(equalTo: time_label.rightAnchor, constant: 16).isActive = true
-        calendar_button.topAnchor.constraint(equalTo: time_label.topAnchor, constant: 0).isActive = true
+        calendar_button.leftAnchor.constraint(equalTo: time_button.rightAnchor, constant: 16).isActive = true
+        calendar_button.topAnchor.constraint(equalTo: time_button.topAnchor, constant: 0).isActive = true
         calendar_button.heightAnchor.constraint(equalToConstant: 24).isActive = true
         calendar_button.widthAnchor.constraint(equalToConstant: 24).isActive = true
         
@@ -137,6 +166,15 @@ class AppCellView:UITableViewCell{
 
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,handleHomepageDelegate {
     
+    var app_data:[(UIImage,String,Int,Int,[(String,String)])] = [
+        (#imageLiteral(resourceName: "icons8-facebook-48"),"Facebook",1,1,[("6:00","9:00")]),
+        (#imageLiteral(resourceName: "icons8-google-maps-48"),"GoogleMaps",1,1,[("6:00","9:00")]),
+        (#imageLiteral(resourceName: "icons8-amazon-48"),"Amazon",1,1,[("6:00","9:00")]),
+        (#imageLiteral(resourceName: "icons8-whatsapp-48"),"Whatsapp",1,0,[("6:00","9:00")]),
+        (#imageLiteral(resourceName: "icons8-weixin-96"),"Wechat",1,1,[("6:00","9:00")]),
+        (#imageLiteral(resourceName: "icons8-twitter-96"),"Twitter",1,1,[("6:00","9:00")]),
+        (#imageLiteral(resourceName: "icons8-yelp-96"),"Yelp",1,1,[("6:00","9:00")]),
+    ]
     
 
     var navigation:NavigationView={
@@ -162,6 +200,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.present(vc, animated: false, completion: nil)
     }
     
+    
+    
     lazy var tableview:UITableView={
         let tbl = UITableView()
         tbl.delegate = self
@@ -175,19 +215,67 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return tbl
     }()
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        
+        let add_button = UIButton(frame: CGRect(x: 16, y: 16, width: 32, height: 32))
+        add_button.layer.cornerRadius = 4
+        add_button.titleLabel?.font = add_button.titleLabel?.font.withSize(20)
+        add_button.setTitle("+", for: .normal)
+        add_button.contentVerticalAlignment = .center
+        add_button.backgroundColor = UIColor.red
+        view.addSubview(add_button)
+        
+        let order_button = UIButton(frame: CGRect(x: 64, y: 16, width: 32, height: 32))
+        order_button.layer.cornerRadius = 4
+        order_button.setImage(UIImage(named: "icons8-list"), for: .normal)
+        order_button.backgroundColor = UIColor.red
+        view.addSubview(order_button)
+        
+        let wifi_label = UILabel(frame: CGRect(x: UIScreen.main.bounds.width-88, y:40 , width: 40, height: 16))
+        wifi_label.text = "Wifi"
+        wifi_label.textAlignment = .center
+        wifi_label.textColor = UIColor.black
+        wifi_label.font = wifi_label.font.withSize(10)
+        view.addSubview(wifi_label)
+        
+        let wifi_image = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width-80, y:16 , width: 24, height: 24))
+        wifi_image.image = UIImage(named:"icons8-ok-96")
+        wifi_image.contentMode = .scaleAspectFit
+        view.addSubview(wifi_image)
+        
+        let cel_label = UILabel(frame: CGRect(x: UIScreen.main.bounds.width-48, y:40 , width: 40, height: 16))
+        cel_label.text = "Cellular"
+        cel_label.textAlignment = .center
+        cel_label.textColor = UIColor.black
+        cel_label.font = wifi_label.font.withSize(10)
+        view.addSubview(cel_label)
+        
+        let cel_image = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width-40, y: 16, width: 24, height: 24))
+        cel_image.image = UIImage(named:"icons8-ok-96")
+        cel_image.contentMode = .scaleAspectFit
+        view.addSubview(cel_image)
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 64
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return self.app_data.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AppCellView
-        cell.app_icon.image = UIImage(named: "icons8-facebook-48")
-        cell.app_name.text = "Facebook"
-        cell.time_label.text = "Time: 6:00 - 9:00"
+        cell.cell_data = self.app_data[indexPath.row]
         cell.backgroundColor = UIColor.clear
         cell.selectionStyle = .none
         cell.delegate = self
+        cell.tag = indexPath.row
         return cell
     }
     
@@ -222,6 +310,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // Dispose of any resources that can be recreated.
     }
     
+    func TypedInTime(index:Int,time:(String,String)){
+        self.app_data[index].4 = []
+        self.app_data[index].4.append(time)
+        self.tableview.reloadData()
+    }
     
     func JumptoCalendar(){
         let vc = CalendarViewController()

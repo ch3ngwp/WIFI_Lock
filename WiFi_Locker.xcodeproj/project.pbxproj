@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E37BC47210928DF0039140A /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E37BC46210928DF0039140A /* TabbarView.swift */; };
+		2E3CE95920F8250400C38BC7 /* UnsettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3CE95820F8250400C38BC7 /* UnsettingView.swift */; };
 		2E90A0D720EEDFD700E12B28 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0D620EEDFD700E12B28 /* Style.swift */; };
 		2E90A0DA20EEE6D300E12B28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0D920EEE6D300E12B28 /* LoginViewController.swift */; };
 		2E90A0DD20EEE97100E12B28 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0DC20EEE97100E12B28 /* HomeViewController.swift */; };
@@ -19,13 +21,19 @@
 		2ED6F01120C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6F00F20C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld */; };
 		2ED6F01320C7724E000F7FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F01220C7724E000F7FA6 /* Assets.xcassets */; };
 		2ED6F01620C7724E000F7FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F01420C7724E000F7FA6 /* LaunchScreen.storyboard */; };
+		2ED76C16210155A700004DD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED76C15210155A600004DD6 /* LoginView.swift */; };
+		2ED76C1821015D5E00004DD6 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED76C1721015D5E00004DD6 /* SignupView.swift */; };
 		2ED81B4F20F41A6800FBB9BD /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED81B4E20F41A6800FBB9BD /* TermViewController.swift */; };
 		2ED81B5220F42BD300FBB9BD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED81B5120F42BD300FBB9BD /* CalendarViewController.swift */; };
+		2ED8B2C22111172C005B4F0B /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8B2C12111172C005B4F0B /* MainTabbarViewController.swift */; };
+		2ED8B2C521126186005B4F0B /* SelectTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8B2C421126186005B4F0B /* SelectTimeView.swift */; };
 		2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */; };
 		2EE7104220F1831800FE1946 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7104120F1831800FE1946 /* extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E37BC46210928DF0039140A /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		2E3CE95820F8250400C38BC7 /* UnsettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsettingView.swift; sourceTree = "<group>"; };
 		2E90A0D620EEDFD700E12B28 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		2E90A0D920EEE6D300E12B28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2E90A0DC20EEE97100E12B28 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -40,8 +48,12 @@
 		2ED6F01220C7724E000F7FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ED6F01520C7724E000F7FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2ED6F01720C7724E000F7FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED76C15210155A600004DD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2ED76C1721015D5E00004DD6 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		2ED81B4E20F41A6800FBB9BD /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
 		2ED81B5120F42BD300FBB9BD /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		2ED8B2C12111172C005B4F0B /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
+		2ED8B2C421126186005B4F0B /* SelectTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeView.swift; sourceTree = "<group>"; };
 		2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2EE7104120F1831800FE1946 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +75,7 @@
 				2E90A0D920EEE6D300E12B28 /* LoginViewController.swift */,
 				2E90A0E320F1676700E12B28 /* PincodeViewController.swift */,
 				2ED81B4E20F41A6800FBB9BD /* TermViewController.swift */,
+				2ED76C142101557500004DD6 /* View */,
 			);
 			path = LoginandRegister;
 			sourceTree = "<group>";
@@ -70,7 +83,10 @@
 		2E90A0DB20EEE91500E12B28 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				2ED8B2C321126147005B4F0B /* Views */,
+				2ED8B2C12111172C005B4F0B /* MainTabbarViewController.swift */,
 				2E90A0DC20EEE97100E12B28 /* HomeViewController.swift */,
+				2E3CE95820F8250400C38BC7 /* UnsettingView.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -80,6 +96,7 @@
 			children = (
 				2E90A0DF20EEEB2D00E12B28 /* NavigationView.swift */,
 				2E90A0E120EEEB7800E12B28 /* BasicView.swift */,
+				2E37BC46210928DF0039140A /* TabbarView.swift */,
 			);
 			path = CustomizedConponent;
 			sourceTree = "<group>";
@@ -121,12 +138,29 @@
 			path = WiFi_Locker;
 			sourceTree = "<group>";
 		};
+		2ED76C142101557500004DD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2ED76C15210155A600004DD6 /* LoginView.swift */,
+				2ED76C1721015D5E00004DD6 /* SignupView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2ED81B5020F42BAF00FBB9BD /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
 				2ED81B5120F42BD300FBB9BD /* CalendarViewController.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		2ED8B2C321126147005B4F0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2ED8B2C421126186005B4F0B /* SelectTimeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2EE7103E20F17DE700FE1946 /* Setting */ = {
@@ -211,15 +245,21 @@
 				2E90A0E020EEEB2D00E12B28 /* NavigationView.swift in Sources */,
 				2ED6F00B20C7724A000F7FA6 /* ViewController.swift in Sources */,
 				2E90A0E420F1676700E12B28 /* PincodeViewController.swift in Sources */,
+				2ED76C16210155A700004DD6 /* LoginView.swift in Sources */,
 				2E90A0D720EEDFD700E12B28 /* Style.swift in Sources */,
 				2ED6F01120C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld in Sources */,
+				2ED8B2C521126186005B4F0B /* SelectTimeView.swift in Sources */,
 				2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */,
 				2ED81B4F20F41A6800FBB9BD /* TermViewController.swift in Sources */,
 				2E90A0DA20EEE6D300E12B28 /* LoginViewController.swift in Sources */,
+				2ED8B2C22111172C005B4F0B /* MainTabbarViewController.swift in Sources */,
 				2ED81B5220F42BD300FBB9BD /* CalendarViewController.swift in Sources */,
 				2EE7104220F1831800FE1946 /* extension.swift in Sources */,
 				2ED6F00920C7724A000F7FA6 /* AppDelegate.swift in Sources */,
+				2E37BC47210928DF0039140A /* TabbarView.swift in Sources */,
+				2ED76C1821015D5E00004DD6 /* SignupView.swift in Sources */,
 				2E90A0DD20EEE97100E12B28 /* HomeViewController.swift in Sources */,
+				2E3CE95920F8250400C38BC7 /* UnsettingView.swift in Sources */,
 				2E90A0E220EEEB7800E12B28 /* BasicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
