@@ -233,6 +233,13 @@ class SelectTimeView: BasicView {
         setupConstraint()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.start_time_view.hour_tf.resignFirstResponder()
+        self.start_time_view.min_tf.resignFirstResponder()
+        self.end_time_view.hour_tf.resignFirstResponder()
+        self.end_time_view.min_tf.resignFirstResponder()
+    }
+    
     func setupConstraint(){
         hole_view.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         hole_view.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true

@@ -17,4 +17,6 @@ struct MyColor{
    static var PrimaryColor = UIColor.black
    static var SecondColor = UIColor.black.withAlphaComponent(0.75)
    static var HintText = UIColor.black.withAlphaComponent(0.5)
+    
+    static var calendar_bg = UIColor(red: 0, green: 151/255, blue: 156/255, alpha: 1)
 }

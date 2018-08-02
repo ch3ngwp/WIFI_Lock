@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 protocol handleHomepageDelegate:NSObjectProtocol {
-    func JumptoCalendar()
+    func JumptoCalendar(index:Int)
     func TypedInTime(index:Int,time:(String,String))
 }
 
@@ -69,7 +69,7 @@ class AppCellView:UITableViewCell{
     
     lazy var calendar_button:UIButton={
         let btn = UIButton()
-        btn.setImage(UIImage(named: "icons8-calendar-64"), for: .normal)
+        btn.setImage(UIImage(named: "icons8-calendar"), for: .normal)
         btn.imageView?.contentMode = .scaleAspectFill
         btn.addTarget(self, action: #selector(handletoCalendar), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +78,7 @@ class AppCellView:UITableViewCell{
     
     @objc func handletoCalendar(){
         if let delegate = self.delegate as handleHomepageDelegate?{
-            delegate.JumptoCalendar()
+            delegate.JumptoCalendar(index: self.tag)
         }
     }
     
@@ -167,13 +167,13 @@ class AppCellView:UITableViewCell{
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,handleHomepageDelegate {
     
     var app_data:[(UIImage,String,Int,Int,[(String,String)])] = [
-        (#imageLiteral(resourceName: "icons8-facebook-48"),"Facebook",1,1,[("6:00","9:00")]),
-        (#imageLiteral(resourceName: "icons8-google-maps-48"),"GoogleMaps",1,1,[("6:00","9:00")]),
-        (#imageLiteral(resourceName: "icons8-amazon-48"),"Amazon",1,1,[("6:00","9:00")]),
-        (#imageLiteral(resourceName: "icons8-whatsapp-48"),"Whatsapp",1,0,[("6:00","9:00")]),
-        (#imageLiteral(resourceName: "icons8-weixin-96"),"Wechat",1,1,[("6:00","9:00")]),
-        (#imageLiteral(resourceName: "icons8-twitter-96"),"Twitter",1,1,[("6:00","9:00")]),
-        (#imageLiteral(resourceName: "icons8-yelp-96"),"Yelp",1,1,[("6:00","9:00")]),
+        (#imageLiteral(resourceName: "icons8-facebook-48"),"Facebook",1,1,[("06:00","09:00")]),
+        (#imageLiteral(resourceName: "icons8-google-maps-48"),"GoogleMaps",1,1,[("06:00","09:00")]),
+        (#imageLiteral(resourceName: "icons8-amazon-48"),"Amazon",1,1,[("06:00","09:00")]),
+        (#imageLiteral(resourceName: "icons8-whatsapp-48"),"Whatsapp",1,0,[("06:00","09:00")]),
+        (#imageLiteral(resourceName: "icons8-weixin-96"),"Wechat",1,1,[("06:00","09:00")]),
+        (#imageLiteral(resourceName: "icons8-twitter-96"),"Twitter",1,1,[("06:00","09:00")]),
+        (#imageLiteral(resourceName: "icons8-yelp-96"),"Yelp",1,1,[("06:00","09:00")]),
     ]
     
 
@@ -316,8 +316,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.tableview.reloadData()
     }
     
-    func JumptoCalendar(){
+    func JumptoCalendar(index:Int){
         let vc = CalendarViewController()
+        vc.calendar_view.time = self.app_data[index].4
         self.present(vc, animated: false, completion: nil)
     }
 

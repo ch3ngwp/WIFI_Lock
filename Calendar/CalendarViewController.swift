@@ -8,7 +8,12 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController {
+protocol CalendarViewdelegate:NSObjectProtocol {
+    func handleUnexpand(index:Int)
+}
+
+
+class CalendarViewController: UIViewController,CalendarViewdelegate {
 
     var navigation:NavigationView={
         let nav = NavigationView()
@@ -41,10 +46,25 @@ class CalendarViewController: UIViewController {
     @objc func handleSave(){
         
     }
+    
+    lazy var calendar_view:CalendarView={
+        let view = CalendarView()
+        view.delegate = self
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         setupNavigation()
+        
+        view.addSubview(calendar_view)
+        
+        calendar_view.topAnchor.constraint(equalTo: navigation.bottomAnchor).isActive = true
+        calendar_view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        calendar_view.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+
         // Do any additional setup after loading the view.
     }
     
@@ -61,6 +81,10 @@ class CalendarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func handleUnexpand(index:Int){
+        self.calendar_view.isExpand![index] = false
+        self.calendar_view.tableview.reloadData()
+    }
 
     /*
     // MARK: - Navigation
