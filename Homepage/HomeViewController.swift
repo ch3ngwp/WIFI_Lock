@@ -42,7 +42,7 @@ class AppCellView:UITableViewCell{
     
     var app_name:UILabel={
         let label = UILabel()
-        label.textColor = UIColor.black
+        label.textColor = UIColor.white
         label.font = label.font.withSize(12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -50,7 +50,7 @@ class AppCellView:UITableViewCell{
     
     lazy var time_button:UIButton={
         let label = UIButton()
-        label.setTitleColor(UIColor.black.withAlphaComponent(0.5), for: .normal)
+        label.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .normal)
         label.titleLabel?.font = label.titleLabel?.font.withSize(16)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.addTarget(self, action: #selector(handleSelectTime), for: .touchUpInside)
@@ -60,6 +60,8 @@ class AppCellView:UITableViewCell{
     @objc func handleSelectTime(){
         if let window = UIApplication.shared.keyWindow{
             let view = SelectTimeView()
+            view.start_time = cell_data?.4[0].0
+            view.end_time = cell_data?.4[0].1
             view.frame = window.frame
             view.tag = self.tag
             view.delegate = self.delegate
@@ -185,27 +187,44 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     var left_navi_item:UIButton={
         let btn = UIButton(frame: CGRect(x: 0, y: 8, width: 24, height: 24))
-        btn.setBackgroundImage(UIImage(named: "wifilock"), for: .normal)
+//        btn.setBackgroundImage(UIImage(named: "wifilock"), for: .normal)
         return btn
     }()
     lazy var right_navi_item:UIButton={
-        let btn = UIButton(frame: CGRect(x: 40, y: 8, width: 24, height: 24))
-        btn.setBackgroundImage(UIImage(named: "icons8-settings-button"), for: .normal)
-        btn.addTarget(self, action: #selector(setting), for: .touchUpInside)
+        let btn = UIButton(frame: CGRect(x: 40, y: 0, width: 32, height: 32))
+        btn.layer.cornerRadius = 16
+        btn.setImage(UIImage(named: "icons8-user-32"), for: .normal)
+        btn.backgroundColor = UIColor.white
         return btn
     }()
     
-    @objc func setting(){
-        let vc = SettingViewController()
-        self.present(vc, animated: false, completion: nil)
-    }
+    var un_settingView:UnsettingView={
+        let view = UnsettingView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    var OrderView:OrderOptionView={
+        let view = OrderOptionView()
+        view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    var AddNewView:AddNewAppView={
+        let view = AddNewAppView()
+        view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     
     
     lazy var tableview:UITableView={
-        let tbl = UITableView()
+        let tbl = UITableView(frame: .zero, style: .grouped)
         tbl.delegate = self
         tbl.dataSource = self
+        tbl.separatorColor = UIColor.white.withAlphaComponent(0.5)
         tbl.showsVerticalScrollIndicator = false
         tbl.backgroundColor = UIColor.clear
         tbl.tableFooterView = UIView()
@@ -217,26 +236,29 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+//        view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        view.backgroundColor = MyColor.calendar_bg
         
         let add_button = UIButton(frame: CGRect(x: 16, y: 16, width: 32, height: 32))
         add_button.layer.cornerRadius = 4
-        add_button.titleLabel?.font = add_button.titleLabel?.font.withSize(20)
+        add_button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         add_button.setTitle("+", for: .normal)
         add_button.contentVerticalAlignment = .center
-        add_button.backgroundColor = UIColor.red
+//        add_button.backgroundColor = UIColor.red
+        add_button.addTarget(self, action: #selector(showAddNewView), for: .touchUpInside)
         view.addSubview(add_button)
         
         let order_button = UIButton(frame: CGRect(x: 64, y: 16, width: 32, height: 32))
         order_button.layer.cornerRadius = 4
         order_button.setImage(UIImage(named: "icons8-list"), for: .normal)
-        order_button.backgroundColor = UIColor.red
+//        order_button.backgroundColor = UIColor.red
+        order_button.addTarget(self, action: #selector(showOrderOption), for: .touchUpInside)
         view.addSubview(order_button)
         
         let wifi_label = UILabel(frame: CGRect(x: UIScreen.main.bounds.width-88, y:40 , width: 40, height: 16))
         wifi_label.text = "Wifi"
         wifi_label.textAlignment = .center
-        wifi_label.textColor = UIColor.black
+        wifi_label.textColor = UIColor.white
         wifi_label.font = wifi_label.font.withSize(10)
         view.addSubview(wifi_label)
         
@@ -248,7 +270,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cel_label = UILabel(frame: CGRect(x: UIScreen.main.bounds.width-48, y:40 , width: 40, height: 16))
         cel_label.text = "Cellular"
         cel_label.textAlignment = .center
-        cel_label.textColor = UIColor.black
+        cel_label.textColor = UIColor.white
         cel_label.font = wifi_label.font.withSize(10)
         view.addSubview(cel_label)
         
@@ -258,6 +280,16 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         view.addSubview(cel_image)
         
         return view
+    }
+    
+    @objc func showAddNewView(){
+        self.AddNewView.selected_app_data = self.app_data
+        self.AddNewView.isHidden = false
+        self.AddNewView.tableview.reloadData()
+    }
+    
+    @objc func showOrderOption(){
+        self.OrderView.isHidden = false
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -272,7 +304,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AppCellView
         cell.cell_data = self.app_data[indexPath.row]
-        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = MyColor.calendar_bg.withAlphaComponent(0.75)
         cell.selectionStyle = .none
         cell.delegate = self
         cell.tag = indexPath.row
@@ -283,6 +315,13 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return 64
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0{
+            scrollView.contentOffset.y = 0
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -291,13 +330,47 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         setupNavigation()
         
         view.addSubview(tableview)
+        view.addSubview(un_settingView)
+
         tableview.topAnchor.constraint(equalTo: navigation.bottomAnchor).isActive = true
         tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
+        un_settingView.topAnchor.constraint(equalTo: navigation.bottomAnchor).isActive = true
+        un_settingView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        un_settingView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        un_settingView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        
+        view.addSubview(AddNewView)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: AddNewView)
+        view.addConstraintsWithFormat(format: "V:|[v0]|", views: AddNewView)
+        
+        view.addSubview(OrderView)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: OrderView)
+        view.addConstraintsWithFormat(format: "V:|[v0]|", views: OrderView)
+        
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "setting"), object: nil, queue: OperationQueue.main) {
+            pNotification in
+            self.CheckSetting()
+            // Your code here
+        }
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.CheckSetting()
+    }
+    
+    func CheckSetting(){
+        let statu = UserDefaults.standard.bool(forKey: "isSetting")
+        print("status \(statu)")
+        if statu{
+            self.un_settingView.removeFromSuperview()
+        }
+    }
+    
+    
     func setupNavigation(){
         view.addSubview(navigation)
         

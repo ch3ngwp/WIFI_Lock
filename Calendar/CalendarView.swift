@@ -13,7 +13,7 @@ class CalendarView: BasicView,UITableViewDelegate,UITableViewDataSource {
     weak var delegate:CalendarViewdelegate?
     var time:[(String,String)] = []{
         didSet{
-            isExpand = [Bool](repeating: true, count: time.count)
+            isExpand = [Bool](repeating: false, count: time.count)
         }
     }
     

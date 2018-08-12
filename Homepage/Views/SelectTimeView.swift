@@ -144,7 +144,21 @@ class TypeInView:BasicView{
 class SelectTimeView: BasicView {
 
     weak var delegate:handleHomepageDelegate?
+    var start_time:String?{
+        didSet{
+            let str = start_time?.components(separatedBy: ":")
+            start_time_view.hour_tf.text = str?[0]
+            start_time_view.min_tf.text = str?[1]
+        }
+    }
     
+    var end_time:String?{
+        didSet{
+            let str = end_time?.components(separatedBy: ":")
+            end_time_view.hour_tf.text = str?[0]
+            end_time_view.min_tf.text = str?[1]
+        }
+    }
     let hole_view:UIView={
         let view = UIView()
         view.layer.cornerRadius = 8

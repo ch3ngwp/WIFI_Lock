@@ -48,6 +48,7 @@ class LoginView: BasicView {
         left_view.addSubview(icon)
         tf.leftViewMode = .always
         tf.leftView = left_view
+        tf.isSecureTextEntry = true
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()

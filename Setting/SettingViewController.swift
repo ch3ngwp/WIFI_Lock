@@ -36,38 +36,12 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var stylecells:[UIView] = []
     var style_texts = ["Background Image","Touch effect color","Theme color"]
     var profile_texts = ["Change profile","Change pincode","Change password","Delete account"]
-    var account_texts = ["Phone setting","Contact us","About us","Privacy","Help & Review"]
+    var account_texts = ["Phone setting","Contact us","About us","Privacy","Help & Review","Log out"]
     var navigation:NavigationView={
         let nav = NavigationView()
         nav.title.text = "Account Setting"
         return nav
     }()
-    
-    lazy var left_navi_item:UIButton={
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 40))
-        btn.setTitle("Back", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.contentHorizontalAlignment = .left
-        btn.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
-        return btn
-    }()
-    
-    @objc func handleBack(){
-        self.dismiss(animated: false, completion: nil)
-    }
-    
-//    lazy var right_navi_item:UIButton={
-//        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 40))
-//        btn.setTitle("Save", for: .normal)
-//        btn.setTitleColor(UIColor.white, for: .normal)
-//        btn.contentHorizontalAlignment = .right
-//        btn.addTarget(self, action: #selector(handleSave), for: .touchUpInside)
-//        return btn
-//    }()
-//
-//    @objc func handleSave(){
-//
-//    }
     
     lazy var tableview:UITableView={
         let tbl = UITableView(frame: .zero, style: .grouped)
@@ -104,21 +78,25 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }else if(section == 1){
             return 4
         }
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
         cell.selectionStyle = .none
+        cell.textLabel?.textColor = UIColor.white
+        cell.backgroundColor = MyColor.calendar_bg
         if indexPath.section == 0{
+            for v in cell.subviews{
+                v.removeFromSuperview()
+            }
             cell.addSubview(stylecells[indexPath.row])
             return cell
         }else if(indexPath.section == 1){
-            cell.textLabel?.textColor = UIColor.black
             cell.textLabel?.text = profile_texts[indexPath.row]
             return cell
         }
-        cell.textLabel?.textColor = UIColor.black
         cell.textLabel?.text = account_texts[indexPath.row]
         return cell
     }
@@ -130,6 +108,18 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
             return 40
         }
         return 48
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 && indexPath.row == 5{
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0{
+            scrollView.contentOffset.y = 0
+        }
     }
     
     override func viewDidLoad() {
@@ -147,6 +137,7 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func setupStyleCells(){
         for i in 0..<3{
             let view = styleCell()
+            view.cell_text.textColor = UIColor.white
             view.cell_text.text = style_texts[i]
             stylecells.append(view)
         }
@@ -156,7 +147,7 @@ class SettingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func setupNavigation(){
         view.addSubview(navigation)
         
-        navigation.left_view.addSubview(left_navi_item)
+//        navigation.left_view.addSubview(left_navi_item)
 //        navigation.right_view.addSubview(right_navi_item)
         
     }

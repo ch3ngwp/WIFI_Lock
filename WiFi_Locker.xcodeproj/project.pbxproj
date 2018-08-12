@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2155AB211F6C2A00F35ACD /* ForgivePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2155AA211F6C2A00F35ACD /* ForgivePasswordView.swift */; };
 		2E37BC47210928DF0039140A /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E37BC46210928DF0039140A /* TabbarView.swift */; };
 		2E3CE95920F8250400C38BC7 /* UnsettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3CE95820F8250400C38BC7 /* UnsettingView.swift */; };
 		2E90A0D720EEDFD700E12B28 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0D620EEDFD700E12B28 /* Style.swift */; };
@@ -15,6 +16,7 @@
 		2E90A0E020EEEB2D00E12B28 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0DF20EEEB2D00E12B28 /* NavigationView.swift */; };
 		2E90A0E220EEEB7800E12B28 /* BasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0E120EEEB7800E12B28 /* BasicView.swift */; };
 		2E90A0E420F1676700E12B28 /* PincodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90A0E320F1676700E12B28 /* PincodeViewController.swift */; };
+		2E9E1E1B2113D86C008A0206 /* AddNewAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E1E1A2113D86C008A0206 /* AddNewAppView.swift */; };
 		2ED6F00920C7724A000F7FA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6F00820C7724A000F7FA6 /* AppDelegate.swift */; };
 		2ED6F00B20C7724A000F7FA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6F00A20C7724A000F7FA6 /* ViewController.swift */; };
 		2ED6F00E20C7724A000F7FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED6F00C20C7724A000F7FA6 /* Main.storyboard */; };
@@ -30,11 +32,14 @@
 		2ED8B2C721128104005B4F0B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8B2C621128103005B4F0B /* CalendarView.swift */; };
 		2ED8B2CB21128412005B4F0B /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8B2CA21128412005B4F0B /* CalendarTableViewCell.swift */; };
 		2ED8B2CD2112A8F6005B4F0B /* SelectTimeByCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8B2CC2112A8F6005B4F0B /* SelectTimeByCalendarView.swift */; };
+		2ED8B2CF2113D00E005B4F0B /* OrderOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8B2CE2113D00E005B4F0B /* OrderOptionView.swift */; };
 		2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */; };
 		2EE7104220F1831800FE1946 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7104120F1831800FE1946 /* extension.swift */; };
+		CC22D5B51C2C913320F6FF5F /* Pods_WiFi_Locker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAF3BBE0BDFF301DA863222 /* Pods_WiFi_Locker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E2155AA211F6C2A00F35ACD /* ForgivePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgivePasswordView.swift; sourceTree = "<group>"; };
 		2E37BC46210928DF0039140A /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		2E3CE95820F8250400C38BC7 /* UnsettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsettingView.swift; sourceTree = "<group>"; };
 		2E90A0D620EEDFD700E12B28 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -43,6 +48,7 @@
 		2E90A0DF20EEEB2D00E12B28 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		2E90A0E120EEEB7800E12B28 /* BasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicView.swift; sourceTree = "<group>"; };
 		2E90A0E320F1676700E12B28 /* PincodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PincodeViewController.swift; sourceTree = "<group>"; };
+		2E9E1E1A2113D86C008A0206 /* AddNewAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAppView.swift; sourceTree = "<group>"; };
 		2ED6F00520C7724A000F7FA6 /* WiFi_Locker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFi_Locker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6F00820C7724A000F7FA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ED6F00A20C7724A000F7FA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,8 +66,12 @@
 		2ED8B2C621128103005B4F0B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		2ED8B2CA21128412005B4F0B /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		2ED8B2CC2112A8F6005B4F0B /* SelectTimeByCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeByCalendarView.swift; sourceTree = "<group>"; };
+		2ED8B2CE2113D00E005B4F0B /* OrderOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderOptionView.swift; sourceTree = "<group>"; };
 		2EE7103F20F17DFE00FE1946 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2EE7104120F1831800FE1946 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		7BAF3BBE0BDFF301DA863222 /* Pods_WiFi_Locker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiFi_Locker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39D493D458F02EE52667359 /* Pods-WiFi_Locker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiFi_Locker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WiFi_Locker/Pods-WiFi_Locker.debug.xcconfig"; sourceTree = "<group>"; };
+		F9A6A11DA704FCD981D586BE /* Pods-WiFi_Locker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiFi_Locker.release.xcconfig"; path = "Pods/Target Support Files/Pods-WiFi_Locker/Pods-WiFi_Locker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC22D5B51C2C913320F6FF5F /* Pods_WiFi_Locker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +130,8 @@
 				2EE7103E20F17DE700FE1946 /* Setting */,
 				2ED6F00720C7724A000F7FA6 /* WiFi_Locker */,
 				2ED6F00620C7724A000F7FA6 /* Products */,
+				FF1B14E07049E288BC3B24FC /* Pods */,
+				F2F46A43309A291B371D4741 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				2ED76C15210155A600004DD6 /* LoginView.swift */,
+				2E2155AA211F6C2A00F35ACD /* ForgivePasswordView.swift */,
 				2ED76C1721015D5E00004DD6 /* SignupView.swift */,
 			);
 			path = View;
@@ -168,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				2ED8B2C421126186005B4F0B /* SelectTimeView.swift */,
+				2ED8B2CE2113D00E005B4F0B /* OrderOptionView.swift */,
+				2E9E1E1A2113D86C008A0206 /* AddNewAppView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +196,23 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		F2F46A43309A291B371D4741 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BAF3BBE0BDFF301DA863222 /* Pods_WiFi_Locker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF1B14E07049E288BC3B24FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C39D493D458F02EE52667359 /* Pods-WiFi_Locker.debug.xcconfig */,
+				F9A6A11DA704FCD981D586BE /* Pods-WiFi_Locker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2ED6F01A20C7724E000F7FA6 /* Build configuration list for PBXNativeTarget "WiFi_Locker" */;
 			buildPhases = (
+				85CF3F43DF5B49E3BBA860BC /* [CP] Check Pods Manifest.lock */,
 				2ED6F00120C7724A000F7FA6 /* Sources */,
 				2ED6F00220C7724A000F7FA6 /* Frameworks */,
 				2ED6F00320C7724A000F7FA6 /* Resources */,
+				DCBD5538898F5B9CEE454295 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +281,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		85CF3F43DF5B49E3BBA860BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WiFi_Locker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCBD5538898F5B9CEE454295 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WiFi_Locker/Pods-WiFi_Locker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BFPaperCheckbox/BFPaperCheckbox.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BFPaperCheckbox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WiFi_Locker/Pods-WiFi_Locker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2ED6F00120C7724A000F7FA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -256,11 +330,13 @@
 				2ED6F00B20C7724A000F7FA6 /* ViewController.swift in Sources */,
 				2E90A0E420F1676700E12B28 /* PincodeViewController.swift in Sources */,
 				2ED76C16210155A700004DD6 /* LoginView.swift in Sources */,
+				2E9E1E1B2113D86C008A0206 /* AddNewAppView.swift in Sources */,
 				2E90A0D720EEDFD700E12B28 /* Style.swift in Sources */,
 				2ED6F01120C7724A000F7FA6 /* WiFi_Locker.xcdatamodeld in Sources */,
 				2ED8B2C521126186005B4F0B /* SelectTimeView.swift in Sources */,
 				2EE7104020F17DFE00FE1946 /* SettingViewController.swift in Sources */,
 				2ED81B4F20F41A6800FBB9BD /* TermViewController.swift in Sources */,
+				2ED8B2CF2113D00E005B4F0B /* OrderOptionView.swift in Sources */,
 				2E90A0DA20EEE6D300E12B28 /* LoginViewController.swift in Sources */,
 				2ED8B2C721128104005B4F0B /* CalendarView.swift in Sources */,
 				2ED8B2C22111172C005B4F0B /* MainTabbarViewController.swift in Sources */,
@@ -270,6 +346,7 @@
 				2E37BC47210928DF0039140A /* TabbarView.swift in Sources */,
 				2ED76C1821015D5E00004DD6 /* SignupView.swift in Sources */,
 				2ED8B2CB21128412005B4F0B /* CalendarTableViewCell.swift in Sources */,
+				2E2155AB211F6C2A00F35ACD /* ForgivePasswordView.swift in Sources */,
 				2E90A0DD20EEE97100E12B28 /* HomeViewController.swift in Sources */,
 				2E3CE95920F8250400C38BC7 /* UnsettingView.swift in Sources */,
 				2E90A0E220EEEB7800E12B28 /* BasicView.swift in Sources */,
@@ -414,6 +491,7 @@
 		};
 		2ED6F01B20C7724E000F7FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C39D493D458F02EE52667359 /* Pods-WiFi_Locker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -432,6 +510,7 @@
 		};
 		2ED6F01C20C7724E000F7FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9A6A11DA704FCD981D586BE /* Pods-WiFi_Locker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

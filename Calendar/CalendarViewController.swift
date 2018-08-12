@@ -36,7 +36,7 @@ class CalendarViewController: UIViewController,CalendarViewdelegate {
     
     lazy var right_navi_item:UIButton={
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 40))
-        btn.setTitle("Save", for: .normal)
+        btn.setTitle("+", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.contentHorizontalAlignment = .right
         btn.addTarget(self, action: #selector(handleSave), for: .touchUpInside)
@@ -44,7 +44,8 @@ class CalendarViewController: UIViewController,CalendarViewdelegate {
     }()
     
     @objc func handleSave(){
-        
+        calendar_view.time.append(("00:00","00:00"))
+        calendar_view.tableview.reloadData()
     }
     
     lazy var calendar_view:CalendarView={

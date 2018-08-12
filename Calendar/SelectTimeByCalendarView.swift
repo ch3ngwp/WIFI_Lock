@@ -116,11 +116,13 @@ class SelectTimeByCalendarView: BasicView,UICollectionViewDelegateFlowLayout,UIC
     }()
     
     @objc func handlePreMonth(){
+        self.selected_arr = [Bool](repeating: false, count: 42)
         self.date = Calendar.current.date(byAdding: .month, value: -1, to: self.date)!
         setupDate()
     }
     
     @objc func handleNextMonth(){
+        self.selected_arr = [Bool](repeating: false, count: 42)
         self.date = Calendar.current.date(byAdding: .month, value: 1, to: self.date)!
         setupDate()
     }
