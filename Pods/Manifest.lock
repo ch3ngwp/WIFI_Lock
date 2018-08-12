@@ -1,0 +1,16 @@
+PODS:
+  - BFPaperCheckbox (2.1.0)
+
+DEPENDENCIES:
+  - BFPaperCheckbox
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BFPaperCheckbox
+
+SPEC CHECKSUMS:
+  BFPaperCheckbox: 447570b82c15e16e8cf427a83ef1ad04ae1dc6c7
+
+PODFILE CHECKSUM: 5fdf93a6a2b7b89230903e8f73c5dbe071f1eaea
+
+COCOAPODS: 1.5.3
